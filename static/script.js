@@ -1,13 +1,19 @@
-var config = {
-  apiKey: "AIzaSyBqbgRVPkr7-t71RqpM47V6HEC3rsq83G8",
-  authDomain: "smartdesk-5705d.firebaseapp.com",
-  databaseURL: "https://smartdesk-5705d.firebaseio.com",
-  projectId: "smartdesk-5705d",
-  storageBucket: "smartdesk-5705d.appspot.com",
-  messagingSenderId: "166438428269"
-};
-firebase.initializeApp(config);
-var key = firebase.database().ref('gyro')
+// var config = {
+//   apiKey: "AIzaSyBqbgRVPkr7-t71RqpM47V6HEC3rsq83G8",
+//   authDomain: "smartdesk-5705d.firebaseapp.com",
+//   databaseURL: "https://smartdesk-5705d.firebaseio.com",
+//   projectId: "smartdesk-5705d",
+//   storageBucket: "smartdesk-5705d.appspot.com",
+//   messagingSenderId: "166438428269"
+// };
+// firebase.initializeApp(config);
+// var key = firebase.database().ref('gyro')
+
+// var update = {}
+// var keyval = '/gyro/' + key + '/input/' + new Date().getTime();
+// update[keyval] = { 'beta': x, 'gamma': y}
+// firebase.database().ref().update(update)
+
 var ball   = document.querySelector('.ball');
 var garden = document.querySelector('.garden');
 var output = document.querySelector('.output');
@@ -21,11 +27,6 @@ function handleOrientation(event) {
 
   output.innerHTML  = "beta : " + x + "\n";
   output.innerHTML += "gamma: " + y + "\n";
-
-  // var update = {}
-  // var keyval = '/gyro/' + key + '/input/' + new Date().getTime();
-  // update[keyval] = { 'beta': x, 'gamma': y}
-  // firebase.database().ref().update(update)
 
   // Because we don't want to have the device upside down
   // We constrain the x value to the range [-90,90]
